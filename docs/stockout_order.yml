@@ -1,0 +1,27 @@
+tags:
+  - stockout_order
+parameters:
+  - in: body
+    name: erp_order_code
+    type: string
+    required: true
+  - in: body
+    name: user_name
+    type: string
+    required: false
+responses:
+    201:
+        description: stockout_order data
+        schema:
+            id: stockout_order
+            properties:
+                erp_order_code:
+                    type: string
+                    description: erp_order_code
+                    default: None
+                wms_order_code:
+                    type: string
+                    description: wms_order_code
+                    default: None
+    422:
+        description: raise err
